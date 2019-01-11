@@ -1,18 +1,52 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Scraping With Mongoose</title>
 
-  </head>
-  <body>
-    <div id="wrapper">
-      <h1>Note Scraper</h1>
-      <h2><i>If you can do this...the homework should be no problem.</i></h2>
-      <div id="articles"></div>
-      <div id="notes"></div>
+<head>
+  <meta charset="UTF-8">
+  <title>Scraping My Knees with Mongoose</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="styleparty/style.css">
+</head>
+
+<body>
+  <!-- This is the Navigation Bar and should contain two buttons -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Mongo Scrapper</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <nav class="navbar navbar-dark bg-dark">
+            <form class="form-inline">
+              <a href="/articles/viewSaved"> <button class="btn btn-sm btn-outline-secondary" id="viewSaved">View Saved Articles</button></a>
+
+            </form>
+          </nav>
+        </li>
+      </ul>
+      <form class="form-inline">
+        <button class="btn btn-outline-success" id="scrape" type="button"data-toggle="modal" data-target="#alertModal">SCRAP NEW ARTICLES</button>
+      </form>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="app.js"></script>
-  </body>
+  </nav>
+  
+  <!-- This is media up front that should hold a picture with WEB SCRAPPER in NEON -->
+  <header class="header">
+    <h1 id="neon">
+      [ Retro Web-Scraper Reuters Edition ]
+    </h1>
+  </header>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
 </html>
