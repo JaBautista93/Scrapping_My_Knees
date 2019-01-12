@@ -4,16 +4,17 @@ const db = require("../models");
 const request = require("request"); //Makes http calls
 const cheerio = require("cheerio");
  
-// A GET route for scraping the NYT website
+// A GET route for scraping the Onion website
 router.get("/scrape", (req, res) => {
     console.log("scrape ran")
     // First, we grab the body of the html with request
-    request("https://www.nytimes.com/", (error, response, body) => {
+    request("https://www.theonion.com/", (error, response, body) => {
         if (!error && response.statusCode === 200) {
             // Then, we load that into cheerio and save it to $ for a shorthand selector
             const $ = cheerio.load(body);
             let count = 0;
             // Now, we grab every article:
+            // <h1 class="headline entry-title js_entry-title"></h1>
             $('article').each(function (i, element) {
                 // Save an empty result object
                 let count = i;
