@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var express = require('express');
 var exphbs = require('express-handlebars');
 var bodyParser = require('body-parser');
@@ -52,7 +51,7 @@ var port = process.env.PORT || 8080;
 app.listen(port, function(){
   console.log('Running on port: ' + port);
 });
-=======
+
 // Dependencies
 const express = require("express");
 const bodyParser = require("body-parser"); //JSON responses
@@ -94,4 +93,3 @@ mongoose.connect(MONGODB_URI);
 app.listen(PORT, function () {
     console.log(`This application is running on port: ${PORT}`);
 });
->>>>>>> f352248bac02dd195f0b4425b43aab2b7e1e1640
