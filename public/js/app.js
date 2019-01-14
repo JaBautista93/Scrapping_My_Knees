@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-  // $(".button-collapse").sideNav();
+  $(".button-collapse").sideNav();
 
   $('.add-comment-button').on('click', function(){   
     var articleId = $(this).data("id");
