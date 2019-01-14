@@ -1,49 +1,60 @@
-// Include the momentJS library
-var moment = require("moment");
+var mongoose = require("mongoose");
 
-// Require Mongoose
-var mongoose = require('mongoose');
-
-// Create a Schema Class
+// Save a reference to the Schema constructor
 var Schema = mongoose.Schema;
 
-// Create Article Schema
+// Using the Schema constructor, create a new UserSchema object
+// This is similar to a Sequelize model
 var ArticleSchema = new Schema({
-
-  // Title of Article
+  // `title` is required and of type String
   title: {
     type: String,
-    required: true
-  },
+    required: true,
+    unique: true
 
-  // Link to Article
+  },
+  // `link` is required and of type String
   link: {
     type: String,
-    required: true
+    required: true,
+    unique: true
+
   },
-  
-  // Summary of Article
+
   summary: {
     type: String,
-    required: true
+    required: false,
+    unique: false
   },
 
-  // Date of article scrape (saving as a string to pretify it in Moment-JS)
-  updated: {
+  byline: {
     type: String,
-    default: moment().format('MMMM Do YYYY, h:mm A')
+    required: false,
+    unique: false
   },
 
-  // Create a relation with the Comment model
-  comments: [{
+  isSaved: {
+    type: Boolean,
+    default: false,
+    required: false,
+    unique: false
+  },
+  // `note` is an object that stores a Note id
+  // The ref property links the ObjectId to the Note model
+  // This allows us to populate the Article with an associated Note
+  // NOTE I SAW THIS WRITTEN DIFFERENTLY SOMEWHERE ELSE
+//   note: {
+//     type: [{ type: Schema.Types.ObjectId, ref: 'Note'}],
+//   }
+// });
+  note: {
     type: Schema.Types.ObjectId,
-    ref: 'Comment'
-  }]
-
+    ref: "Note"
+  }
 });
 
-// Create the Article model with Mongoose
-var Article = mongoose.model('Article', ArticleSchema);
+// This creates our model from the above schema, using mongoose's model method
+var Article = mongoose.model("Article", ArticleSchema);
 
-// Export the Model
+// Export the Article model
 module.exports = Article;

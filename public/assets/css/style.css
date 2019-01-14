@@ -300,7 +300,11 @@ html {
 body {
   margin-bottom: 80px;
   /* background-image: url("../img/fakenews.png"); */
+<<<<<<< HEAD
   /* background-color: black; */
+=======
+  background-color: black;
+>>>>>>> f352248bac02dd195f0b4425b43aab2b7e1e1640
 }
 
 .card a:not([href]):not([tabindex]).scrape-new {
