@@ -42,7 +42,7 @@ db.once('open', function() {
 // Routes
 var Comment = require('./models/Comment.js');
 var Article = require('./models/Article.js');
-var router = require('./controllers/controller.js');
+var router = require('./controller/controller.js');
 app.use('/', router);
 
 // Launch App
