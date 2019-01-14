@@ -1,0 +1,87 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">
+    Mongo Scraper
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <ul class="navbar-nav mr-auto">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/">
+        Home
+        <span class="sr-only">
+          (current)
+        </span>
+      </a>
+      <a class="nav-item nav-link" href="/saved">
+        View Saved Articles
+      </a>
+            </ul>
+
+      <a
+        href="/scrape"
+        class="btn btn-outline-success"
+        role="button"
+        aria-pressed="true"
+      >
+        Scrape Fake News
+      </a>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="jumbotron text-center background-image">
+    <div class="overlay">
+      <div class="randomneoneffect offset neon move ">
+        <h1 class="display-1">
+          Fake Web-Scraper
+        </h1>
+        <h2 class="">
+          Onion Edition
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      {{#if article}}
+        {{#each article}}
+          <div class="card w-90">
+            <div class="card-header text-white bg-primary">
+              <a href={{link}} target="_blank" class="text-white">
+                <h2>
+                  {{title}}
+                </h2>
+              </a>
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                {{summary}}
+              </p>
+              <button id="{{_id}}" class="btn btn-primary save-btn">
+                Save Article
+              </button>
+            </div>
+          </div>
+        {{/each}}
+      {{else}}
+        <div class="card text-white bg-dark w-90 p-1">
+          <div class="card-body text-center">
+            Nothing new to lie about, guess its time to scrape...
+          </div>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+  <div id="articles"></div>
+      <div id="notes"></div>
+</div>
