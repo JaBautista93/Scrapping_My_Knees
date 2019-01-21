@@ -1,5 +1,5 @@
 {
-  "name": "mongoose_skeleton",
+  "name": "node-express-mongoose-skeleton",
   "version": "5.0.0",
   "description": "",
   "main": "server.js",
